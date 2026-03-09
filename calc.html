@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+       
+        .card{
+            padding: 10px;
+            background-color:black;
+            justify-content: center;
+            margin-left:450px ;
+            margin-top: 100px;
+            width: 400px;
+            height: 250px;
+            border-radius: 20px;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:rgb(156, 93, 93);
+           
+        }
+        h2{
+           color: white;
+           font-family: Algerian;
+           font-weight: bolder;
+           text-align: center;
+        }
+        input{
+            padding: 8px;
+            width: 150px;
+            border-radius: 10px;
+            border: none;
+            margin-left: 20px;
+        }
+        button{
+            padding: 8px;
+            width: 50px;
+            border-radius: 15px;
+            font-size: 20px;
+          
+        }
+        #result{
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+   <div class="card">
+    <h2>CALCULATOR</h2>
+    <input type="number" placeholder="First number" id="num1">
+    <input type="number" placeholder="Second number" id="num2">
+    <br><br>
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">x</button>
+    <button onclick="calculate('/')">/</button>
+    <br><br>
+    <div id="result">Result>></div>
+    <script>
+     function calculate(operator){
+         let number1=(document.getElementById("num1").value);
+         let number2=(document.getElementById("num2").value);
+         number1=Number(number1);
+         number2=Number(number2);
+ 
+         let result;
+ 
+         if (operator==="+"){
+             result=number1+number2;
+         }
+         else if(operator==="-"){
+             result=number1-number2;
+         }
+         else if(operator==="*"){
+             result=number1*number2;
+         }
+         else if(operator==="/"){
+             if(number2==0){
+                 result="Cannot devide no by zero"
+             }
+             else{ 
+             result=number1/number2;
+             }
+         }
+         
+ 
+         document.getElementById("result").innerText="Result>> "+result;
+     }
+    </script>
+   </div>
+</body>
+</html>
